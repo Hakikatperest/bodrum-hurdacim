@@ -265,6 +265,7 @@
 --gray-600:#5a5a5a;--gray-500:#7a7a7a;--gray-400:#9a9a9a;
 --gray-300:#cccccc;--gray-200:#e5e5e5;--gray-100:#f5f4f2;--white:#fff;
 --success:#06a77d;--warning:#f4a261;
+--call:#1a73e8;--call-dark:#0d47a1;
 --font-heading:'Bebas Neue',sans-serif;--font-body:'Montserrat',sans-serif;--font-display:'Poppins',sans-serif;
 --shadow-sm:0 2px 8px rgba(0,0,0,.08);--shadow-md:0 8px 24px rgba(0,0,0,.12);
 --shadow-lg:0 16px 40px rgba(0,0,0,.18);--shadow-xl:0 24px 60px rgba(0,0,0,.25);
@@ -294,12 +295,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .section-header{text-align:center;max-width:800px;margin:0 auto 70px}
 .section-header p{font-size:1.1rem;color:var(--gray-600);margin-top:16px}
 
-/* ANNOUNCEMENT */
-.announcement-bar{background:linear-gradient(90deg,var(--primary-dark),var(--primary),var(--primary-light));background-size:200% 100%;animation:gradientShift 6s ease infinite;color:var(--white);padding:10px 0;font-size:.85rem;font-weight:600;letter-spacing:1px;position:relative;z-index:1001;overflow:hidden}
-@keyframes gradientShift{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
-.announcement-bar .container{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.announcement-bar .marquee{display:flex;align-items:center;gap:8px}
-.announcement-bar .pulse-dot{width:10px;height:10px;background:#0f8;border-radius:50%;box-shadow:0 0 0 0 rgba(0,255,136,.8);animation:pulseDot 2s infinite}
 @keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(0,255,136,.8)}70%{box-shadow:0 0 0 12px rgba(0,255,136,0)}100%{box-shadow:0 0 0 0 rgba(0,255,136,0)}}
 
 /* HEADER */
@@ -312,16 +307,16 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .logo:hover .logo-icon::before{transform:translateX(100%)}
 .logo:hover .logo-icon{transform:rotate(-8deg) scale(1.05)}
 .logo-text{display:flex;flex-direction:column;line-height:1.1}
-.logo-name{font-family:var(--font-heading);font-size:1.45rem;letter-spacing:1px;color:var(--secondary)}
+.logo-name{font-family:var(--font-heading);font-size:1.3rem;letter-spacing:1px;color:var(--secondary);white-space:nowrap}
 .logo-tagline{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;color:var(--primary);font-weight:600}
-.nav-menu{display:flex;list-style:none;gap:4px;align-items:center}
-.nav-link{padding:10px 16px;font-size:.92rem;font-weight:600;color:var(--gray-700);border-radius:var(--radius-sm);position:relative;text-transform:uppercase;letter-spacing:.5px;transition:var(--transition-fast)}
-.nav-link::after{content:'';position:absolute;bottom:4px;left:50%;width:0;height:2px;background:var(--primary);transform:translateX(-50%);transition:width .3s}
+.nav-menu{display:flex;list-style:none;gap:2px;align-items:center}
+.nav-link{padding:9px 12px;font-size:.82rem;font-weight:600;color:var(--gray-700);border-radius:var(--radius-sm);position:relative;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap;transition:var(--transition-fast)}
+.nav-link::after{content:'';position:absolute;bottom:3px;left:50%;width:0;height:2px;background:var(--primary);transform:translateX(-50%);transition:width .3s}
 .nav-link:hover{color:var(--primary)}
-.nav-link:hover::after{width:calc(100% - 32px)}
+.nav-link:hover::after{width:calc(100% - 24px)}
 .nav-link.active-link{color:var(--primary)}
-.nav-link.active-link::after{width:calc(100% - 32px)}
-.nav-cta{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--white)!important;padding:12px 24px!important;border-radius:var(--radius-full)!important;font-weight:700!important;display:flex;align-items:center;gap:8px;box-shadow:0 6px 16px rgba(207,92,26,.4)}
+.nav-link.active-link::after{width:calc(100% - 24px)}
+.nav-cta{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--white)!important;padding:11px 20px!important;border-radius:var(--radius-full)!important;font-weight:700!important;display:flex;align-items:center;gap:8px;white-space:nowrap;margin-left:8px;box-shadow:0 6px 16px rgba(207,92,26,.4)}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(207,92,26,.55)}
 .nav-cta::after{display:none!important}
 .nav-cta i{animation:phoneRing 1.6s ease-in-out infinite}
@@ -355,7 +350,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .hero-title .word:nth-child(4){animation-delay:.55s}
 .hero-title .word:nth-child(5){animation-delay:.7s}
 @keyframes wordIn{to{opacity:1;transform:translateY(0)}}
-.hero-title .accent{background:linear-gradient(135deg,var(--accent),var(--primary-light));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-title .accent{color:var(--primary-light)}
 .hero-description{font-size:1.15rem;line-height:1.7;color:rgba(255,255,255,.85);margin-bottom:36px;max-width:580px;animation:fadeInUp 1s cubic-bezier(.4,0,.2,1) .8s both}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:48px;animation:fadeInUp 1s cubic-bezier(.4,0,.2,1) 1s both}
@@ -373,6 +368,32 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .btn-whatsapp:hover{background:#1ebe5a;transform:translateY(-3px);box-shadow:0 16px 36px rgba(37,211,102,.55)}
 .btn i{transition:transform .3s}
 .btn:hover i{transform:translateX(4px)}
+
+/* ARAMA (HEMEN ARA) BUTONLARI - MAVİ */
+.is-call{background:linear-gradient(135deg,var(--call),var(--call-dark))!important;color:var(--white)!important;border-color:transparent!important;box-shadow:0 12px 30px rgba(26,115,232,.38)!important}
+.is-call::before{background:linear-gradient(135deg,#3d8bfd,var(--call))!important}
+.is-call:hover{box-shadow:0 18px 42px rgba(26,115,232,.5)!important}
+.float-btn.is-call::after{border-color:var(--call)!important}
+.pricing-btn.is-call:hover{background:var(--call-dark)!important}
+
+/* ÇEVRİMİÇİ BİLDİRİMİ */
+.online-toast{position:fixed;left:30px;bottom:30px;z-index:998;width:340px;max-width:calc(100vw - 60px);background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);padding:22px 24px 20px;opacity:0;transform:translateY(26px) scale(.96);pointer-events:none;transition:opacity .45s cubic-bezier(.4,0,.2,1),transform .45s cubic-bezier(.4,0,.2,1)}
+.online-toast.show{opacity:1;transform:none;pointer-events:auto}
+.ot-close{position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gray-500);font-size:.85rem;transition:var(--transition-fast)}
+.ot-close:hover{background:var(--gray-100);color:var(--secondary)}
+.ot-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.ot-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;position:relative}
+.ot-avatar::after{content:'';position:absolute;right:-1px;bottom:-1px;width:14px;height:14px;border-radius:50%;background:#0f8;border:2.5px solid var(--white)}
+.ot-status{display:flex;align-items:center;gap:7px;font-size:.78rem;font-weight:700;color:#0a9c5b;text-transform:uppercase;letter-spacing:1px}
+.ot-status .dot{width:8px;height:8px;border-radius:50%;background:#0f8;animation:pulseDot 1.8s infinite}
+.ot-title{font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--secondary);margin-top:3px}
+.ot-text{font-size:.88rem;line-height:1.65;color:var(--gray-600);margin-bottom:16px}
+.ot-actions{display:flex;gap:10px}
+.ot-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;border-radius:var(--radius-full);font-size:.86rem;font-weight:700;transition:var(--transition-base);white-space:nowrap}
+.ot-btn-call{background:linear-gradient(135deg,var(--call),var(--call-dark));color:var(--white);box-shadow:0 8px 20px rgba(26,115,232,.35)}
+.ot-btn-call:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(26,115,232,.45)}
+.ot-btn-wa{background:#25D366;color:var(--white);flex:0 0 52px}
+.ot-btn-wa:hover{background:#1ebe5a;transform:translateY(-2px)}
 
 .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:36px;border-top:1px solid rgba(255,255,255,.15);animation:fadeInUp 1s cubic-bezier(.4,0,.2,1) 1.2s both}
 .hero-stat-num{font-family:var(--font-heading);font-size:clamp(2rem,4vw,3rem);color:var(--accent);line-height:1;margin-bottom:6px}
@@ -682,6 +703,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:rgba(255,255,255,.55)}
 .footer-bottom a{color:var(--accent);font-weight:600}
 .footer-bottom a:hover{color:var(--primary-light)}
+.footer-credit{display:inline-flex;align-items:center;gap:6px}
+.w4m{color:#fff!important;font-weight:700;letter-spacing:.2px;transition:var(--transition-fast)}
+.w4m .four{color:#1a73e8}
+.w4m:hover{color:#fff!important;opacity:.82}
 
 /* FLOATING BUTTONS */
 .floating-buttons{position:fixed;bottom:30px;right:30px;z-index:999;display:flex;flex-direction:column;gap:14px}
@@ -713,8 +738,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;display:none;align-items:center;justify-content:center;padding:30px}
 .lightbox.active{display:flex;animation:lightboxIn .3s}
 @keyframes lightboxIn{from{opacity:0}to{opacity:1}}
-.lightbox img{max-width:90%;max-height:90%;border-radius:var(--radius-md);box-shadow:var(--shadow-xl)}
-.lightbox-close{position:absolute;top:30px;right:30px;width:50px;height:50px;background:var(--primary);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:pointer}
+.lightbox-panel{max-width:min(880px,92vw);max-height:90vh;display:flex;flex-direction:column;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-xl)}
+.lightbox img{width:100%;max-height:62vh;object-fit:contain;background:#111;display:block}
+.lightbox-cta{display:flex;align-items:center;gap:20px;padding:20px 26px;flex-wrap:wrap}
+.lightbox-cta-text{flex:1;min-width:190px}
+.lightbox-cta-text strong{display:block;font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--secondary);line-height:1.3}
+.lightbox-cta-text span{font-size:.92rem;color:var(--gray-600)}
+.lightbox-cta .btn{padding:14px 26px;font-size:.88rem}
+.lightbox-close{position:absolute;top:30px;right:30px;width:50px;height:50px;background:var(--primary);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:pointer;z-index:2}
 
 /* RESPONSIVE */
 @media (max-width:1100px){
@@ -728,11 +759,15 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .stats-grid{grid-template-columns:repeat(2,1fr)}
 .materials-grid{grid-template-columns:repeat(3,1fr)}
 }
-@media (max-width:900px){
-.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);flex-direction:column;padding:20px;gap:6px;box-shadow:var(--shadow-lg)}
+@media (max-width:1100px){
+.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);flex-direction:column;padding:20px;gap:6px;box-shadow:var(--shadow-lg);align-items:stretch}
 .nav-menu.active{display:flex}
-.nav-menu .nav-link{width:100%;padding:14px 16px}
+.nav-menu .nav-link{width:100%;padding:14px 16px;font-size:.95rem}
+.nav-menu .nav-cta{justify-content:center;margin-left:0;margin-top:6px}
 .menu-toggle{display:flex}
+.logo-name{font-size:1.45rem}
+}
+@media (max-width:900px){
 .services-grid,.pricing-grid,.greviews-grid{grid-template-columns:repeat(2,1fr)}
 .materials-grid{grid-template-columns:repeat(2,1fr)}
 .pricing-card.featured{transform:none}
@@ -744,9 +779,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .container{padding:0 18px}
 .section-title{font-size:2rem}
 .section-subtitle{font-size:.85rem;letter-spacing:2px}
-.announcement-bar{font-size:.75rem}
-.announcement-bar .container{gap:10px;justify-content:center}
-.announcement-bar .hide-mobile{display:none}
+.online-toast{left:16px;right:16px;bottom:16px;width:auto;max-width:none;padding:20px 20px 18px}
+.lightbox{padding:16px}
+.lightbox-cta{padding:16px 18px;gap:14px}
+.lightbox-cta .btn{width:100%}
+.lightbox-close{top:18px;right:18px;width:42px;height:42px;font-size:1.15rem}
 .hero{min-height:auto;padding:60px 0}
 .hero-card-stack{height:360px}
 .hero-stats{grid-template-columns:1fr;gap:14px;padding-top:24px}
@@ -782,20 +819,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </head>
 <body>
 
-<!-- ANNOUNCEMENT BAR -->
-<div class="announcement-bar">
-  <div class="container">
-    <div class="marquee">
-      <span class="pulse-dot"></span>
-      <span><i class="fas fa-truck"></i> BODRUM GENELİ ÜCRETSİZ HURDA TOPLAMA AKTİF</span>
-    </div>
-    <div class="hide-mobile">
-      <i class="fas fa-map-marker-alt"></i> Bodrum, Muğla &nbsp;|&nbsp;
-      <i class="fas fa-phone"></i> Hemen Arayın: <strong>0530 121 35 51</strong>
-    </div>
-  </div>
-</div>
-
 <!-- HEADER -->
 <header class="header" id="header">
   <div class="container">
@@ -811,12 +834,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <li><a href="#anasayfa" class="nav-link">Anasayfa</a></li>
         <li><a href="#hakkimizda" class="nav-link">Hakkımızda</a></li>
         <li><a href="#hizmetler" class="nav-link">Hizmetler</a></li>
-        <li><a href="#bolgeler" class="nav-link">Hizmet Bölgeleri</a></li>
+        <li><a href="#bolgeler" class="nav-link">Bölgeler</a></li>
         <li><a href="#hurda-cesitleri" class="nav-link">Hurda Çeşitleri</a></li>
         <li><a href="#sss" class="nav-link">SSS</a></li>
         <li><a href="#iletisim" class="nav-link">İletişim</a></li>
         <li>
-          <a href="tel:+905301213551" class="nav-link nav-cta">
+          <a href="tel:+905301213551" class="nav-link nav-cta is-call">
             <i class="fas fa-phone-alt"></i><span>Hemen Ara</span>
           </a>
         </li>
@@ -841,23 +864,20 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         </div>
         <h1 class="hero-title">
           <span class="word">Bodrum</span>
-          <span class="word accent">Hurda</span>
+          <span class="word">Hurda</span>
           <span class="word">Alımı</span>
           <span class="word accent">Yerinde</span>
-          <span class="word">Nakit</span>
+          <span class="word accent">Nakit</span>
         </h1>
         <p class="hero-description">
           Bodrum ve tüm mahallelerinde hurda bakır, demir, çelik, alüminyum, kablo, beyaz eşya ve klima alıyoruz. Kilo fiyatını telefonda net söylüyor, adresinize kendi aracımızla gelip yerinde tartıyor ve parayı elden nakit ödüyoruz. Söküm ve nakliye bizden, sizden tek bir kuruş çıkmıyor.
         </p>
         <div class="hero-actions">
-          <a href="tel:+905301213551" class="btn btn-primary">
+          <a href="tel:+905301213551" class="btn btn-primary is-call">
             <i class="fas fa-phone-alt"></i><span>Hemen Ara</span>
           </a>
           <a href="https://wa.me/905301213551" class="btn btn-whatsapp" target="_blank" rel="noopener">
             <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
-          </a>
-          <a href="#hurda-cesitleri" class="btn btn-secondary">
-            <span>Hurda Çeşitleri</span><i class="fas fa-arrow-right"></i>
           </a>
         </div>
         <div class="hero-stats">
@@ -1763,7 +1783,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
           <li><i class="fas fa-check-circle"></i> Kat ve bahçeden taşıma bizden</li>
           <li><i class="fas fa-check-circle"></i> Yerinde nakit ödeme</li>
         </ul>
-        <a href="tel:+905301213551" class="pricing-btn">
+        <a href="tel:+905301213551" class="pricing-btn is-call">
           <i class="fas fa-phone-alt"></i> Hemen Ara
         </a>
       </div>
@@ -1998,7 +2018,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="faq-cta-box">
           <h4><i class="fas fa-headset"></i> Fiyat Öğrenmek İçin Arayın</h4>
           <p>Hurdanızın cinsini ve yaklaşık miktarını söyleyin, kilo fiyatını gelmeden önce net olarak bildirelim.</p>
-          <a href="tel:+905301213551" class="btn btn-whatsapp" style="background:#fff;color:var(--primary)">
+          <a href="tel:+905301213551" class="btn is-call">
             <i class="fas fa-phone-alt"></i><span>0530 121 35 51</span>
           </a>
         </div>
@@ -2104,7 +2124,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <h2>Hurdanız <span class="accent">Bugün</span> Paraya Dönsün</h2>
       <p>Evde, bahçede, depoda veya şantiyede duran hurdanız yer kaplamasın. Bir telefon yeterli: kilo fiyatını söyleyelim, gelip yerinde tartalım, parayı elden ödeyelim.</p>
       <div class="cta-actions">
-        <a href="tel:+905301213551" class="btn btn-primary">
+        <a href="tel:+905301213551" class="btn btn-primary is-call">
           <i class="fas fa-phone-alt"></i><span>Hemen Ara: 0530 121 35 51</span>
         </a>
         <a href="https://wa.me/905301213551" target="_blank" rel="noopener" class="btn btn-whatsapp">
@@ -2294,7 +2314,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     </div>
     <div class="footer-bottom">
       <div>© 2026 Bodrum Hurdacım. Tüm hakları saklıdır.</div>
-      <div><a href="https://bodrumhurdacim.com.tr/">bodrumhurdacim.com.tr</a></div>
+      <div class="footer-credit">
+        Bu site
+        <a href="https://www.web4medya.com/" target="_blank" rel="noopener" class="w4m">Web<span class="four">4</span>Medya</a>
+        tarafından özenle kodlanmıştır
+      </div>
     </div>
   </div>
 </footer>
@@ -2305,7 +2329,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <i class="fab fa-whatsapp"></i>
     <span class="tooltip">WhatsApp ile Yaz</span>
   </a>
-  <a href="tel:+905301213551" class="float-btn float-call" aria-label="Telefon">
+  <a href="tel:+905301213551" class="float-btn float-call is-call" aria-label="Telefon">
     <i class="fas fa-phone-alt"></i>
     <span class="tooltip">Hemen Ara</span>
   </a>
@@ -2314,12 +2338,38 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </button>
 </div>
 
+<!-- ÇEVRİMİÇİ BİLDİRİMİ (sayfanın yarısında açılır) -->
+<div class="online-toast" id="onlineToast" role="status" aria-live="polite">
+  <button class="ot-close" id="otClose" aria-label="Bildirimi kapat"><i class="fas fa-times"></i></button>
+  <div class="ot-head">
+    <div class="ot-avatar"><i class="fas fa-headset"></i></div>
+    <div>
+      <div class="ot-status"><span class="dot"></span> Şu an çevrimiçiyiz</div>
+      <div class="ot-title">Bodrum Hurdacım</div>
+    </div>
+  </div>
+  <p class="ot-text">Hurdanızın kilo fiyatını hemen öğrenin. Fiyat teklifi için arayın, telefonda net fiyat verelim.</p>
+  <div class="ot-actions">
+    <a href="tel:+905301213551" class="ot-btn ot-btn-call"><i class="fas fa-phone-alt"></i> Hemen Ara</a>
+    <a href="https://wa.me/905301213551" target="_blank" rel="noopener" class="ot-btn ot-btn-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose" aria-label="Kapat">
     <i class="fas fa-times"></i>
   </button>
-  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-panel">
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-cta">
+      <div class="lightbox-cta-text">
+        <strong id="lightboxTitle">Hurda Alımı</strong>
+        <span>Fiyat teklifi için arayınız</span>
+      </div>
+      <a href="tel:+905301213551" class="btn is-call"><i class="fas fa-phone-alt"></i><span>Hemen Ara</span></a>
+    </div>
+  </div>
 </div>
 
 <!-- ============ JAVASCRIPT ============ -->
@@ -2451,6 +2501,7 @@ if (particlesContainer) {
 var lightbox = document.getElementById('lightbox');
 var lightboxImg = document.getElementById('lightboxImg');
 var lightboxClose = document.getElementById('lightboxClose');
+var lightboxTitle = document.getElementById('lightboxTitle');
 function closeLightbox(){
   if (lightbox) lightbox.classList.remove('active');
   document.body.style.overflow = '';
@@ -2462,6 +2513,8 @@ document.querySelectorAll('.gallery-item').forEach(function(item){
     lightboxImg.src = src;
     var img = item.querySelector('img');
     lightboxImg.alt = img ? img.alt : '';
+    var caption = item.querySelector('.gallery-caption h4');
+    if (lightboxTitle) lightboxTitle.textContent = caption ? caption.textContent : 'Hurda Alımı';
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   });
@@ -2507,7 +2560,37 @@ if (scrollTopBtn) {
   });
 }
 
-// 10) İletişim formu -> WhatsApp mesajı
+// 10) Çevrimiçi bildirimi - sayfanın yarısına inilince açılır
+var toast = document.getElementById('onlineToast');
+var otClose = document.getElementById('otClose');
+if (toast) {
+  var dismissed = false;
+  try { dismissed = sessionStorage.getItem('otDismissed') === '1'; } catch (err) {}
+  var shown = dismissed;
+
+  function maybeShowToast(){
+    if (shown) return;
+    var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    if (scrollable <= 0) return;
+    if (window.scrollY / scrollable >= 0.5) {
+      shown = true;
+      toast.classList.add('show');
+      window.removeEventListener('scroll', maybeShowToast);
+    }
+  }
+  window.addEventListener('scroll', maybeShowToast, {passive: true});
+  maybeShowToast();
+
+  if (otClose) {
+    otClose.addEventListener('click', function(){
+      toast.classList.remove('show');
+      shown = true;
+      try { sessionStorage.setItem('otDismissed', '1'); } catch (err) {}
+    });
+  }
+}
+
+// 11) İletişim formu -> WhatsApp mesajı
 var form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', function(e){
