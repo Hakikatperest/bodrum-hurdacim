@@ -377,22 +377,21 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .pricing-btn.is-call:hover{background:var(--call-dark)!important}
 
 /* ÇEVRİMİÇİ BİLDİRİMİ */
-.online-toast{position:fixed;left:30px;bottom:30px;z-index:998;width:340px;max-width:calc(100vw - 60px);background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);padding:22px 24px 20px;opacity:0;transform:translateY(26px) scale(.96);pointer-events:none;transition:opacity .45s cubic-bezier(.4,0,.2,1),transform .45s cubic-bezier(.4,0,.2,1)}
+.online-toast{position:fixed;left:24px;bottom:24px;z-index:1002;width:310px;max-width:calc(100vw - 32px);background:var(--white);border:1px solid var(--gray-200);border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.22);padding:16px 18px;opacity:0;transform:translateY(20px) scale(.97);pointer-events:none;transition:opacity .4s cubic-bezier(.4,0,.2,1),transform .4s cubic-bezier(.4,0,.2,1)}
 .online-toast.show{opacity:1;transform:none;pointer-events:auto}
-.ot-close{position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gray-500);font-size:.85rem;transition:var(--transition-fast)}
-.ot-close:hover{background:var(--gray-100);color:var(--secondary)}
-.ot-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
-.ot-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;position:relative}
-.ot-avatar::after{content:'';position:absolute;right:-1px;bottom:-1px;width:14px;height:14px;border-radius:50%;background:#0f8;border:2.5px solid var(--white)}
-.ot-status{display:flex;align-items:center;gap:7px;font-size:.78rem;font-weight:700;color:#0a9c5b;text-transform:uppercase;letter-spacing:1px}
-.ot-status .dot{width:8px;height:8px;border-radius:50%;background:#0f8;animation:pulseDot 1.8s infinite}
-.ot-title{font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--secondary);margin-top:3px}
-.ot-text{font-size:.88rem;line-height:1.65;color:var(--gray-600);margin-bottom:16px}
-.ot-actions{display:flex;gap:10px}
-.ot-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;border-radius:var(--radius-full);font-size:.86rem;font-weight:700;transition:var(--transition-base);white-space:nowrap}
-.ot-btn-call{background:linear-gradient(135deg,var(--call),var(--call-dark));color:var(--white);box-shadow:0 8px 20px rgba(26,115,232,.35)}
-.ot-btn-call:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(26,115,232,.45)}
-.ot-btn-wa{background:#25D366;color:var(--white);flex:0 0 52px}
+.ot-close{position:absolute;top:-10px;right:-10px;width:30px;height:30px;border-radius:50%;background:var(--secondary);color:var(--white);border:2px solid var(--white);display:flex;align-items:center;justify-content:center;font-size:.75rem;box-shadow:var(--shadow-md);transition:var(--transition-fast);z-index:2}
+.ot-close:hover{background:var(--primary);transform:rotate(90deg)}
+.ot-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-right:6px}
+.ot-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;position:relative}
+.ot-avatar::after{content:'';position:absolute;right:-1px;bottom:-1px;width:12px;height:12px;border-radius:50%;background:#0f8;border:2px solid var(--white)}
+.ot-status{display:flex;align-items:center;gap:6px;font-size:.7rem;font-weight:700;color:#0a9c5b;text-transform:uppercase;letter-spacing:.8px}
+.ot-status .dot{width:7px;height:7px;border-radius:50%;background:#0f8;animation:pulseDot 1.8s infinite}
+.ot-title{font-family:var(--font-display);font-weight:600;font-size:.94rem;color:var(--secondary);margin-top:2px;line-height:1.35}
+.ot-actions{display:flex;gap:8px}
+.ot-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border-radius:var(--radius-full);font-size:.85rem;font-weight:700;transition:var(--transition-base);white-space:nowrap}
+.ot-btn-call{flex:1;background:linear-gradient(135deg,var(--call),var(--call-dark));color:var(--white);box-shadow:0 6px 16px rgba(26,115,232,.32)}
+.ot-btn-call:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(26,115,232,.42)}
+.ot-btn-wa{background:#25D366;color:var(--white);flex:0 0 46px;font-size:1.05rem}
 .ot-btn-wa:hover{background:#1ebe5a;transform:translateY(-2px)}
 
 .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:36px;border-top:1px solid rgba(255,255,255,.15);animation:fadeInUp 1s cubic-bezier(.4,0,.2,1) 1.2s both}
@@ -779,14 +778,22 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .container{padding:0 18px}
 .section-title{font-size:2rem}
 .section-subtitle{font-size:.85rem;letter-spacing:2px}
-.online-toast{left:16px;right:16px;bottom:16px;width:auto;max-width:none;padding:20px 20px 18px}
+.online-toast{left:12px;right:12px;bottom:12px;width:auto;max-width:none;padding:14px 16px}
+.ot-close{top:-9px;right:-9px}
+/* Bildirim açıkken sabit butonlar kartın üstüne binmesin */
+body.toast-open .floating-buttons{opacity:0;pointer-events:none;transform:translateY(12px)}
+.floating-buttons{transition:opacity .3s,transform .3s}
 .lightbox{padding:16px}
 .lightbox-cta{padding:16px 18px;gap:14px}
 .lightbox-cta .btn{width:100%}
 .lightbox-close{top:18px;right:18px;width:42px;height:42px;font-size:1.15rem}
 .hero{min-height:auto;padding:60px 0}
 .hero-card-stack{height:360px}
-.hero-stats{grid-template-columns:1fr;gap:14px;padding-top:24px}
+.hero-stats{grid-template-columns:repeat(3,1fr);gap:0;padding-top:26px;text-align:center}
+.hero-stats > div{padding:0 6px}
+.hero-stats > div + div{border-left:1px solid rgba(255,255,255,.16)}
+.hero-stat-num{font-size:2.1rem;margin-bottom:8px}
+.hero-stat-label{font-size:.6rem;letter-spacing:.8px;line-height:1.45}
 .hero-actions{flex-direction:column}
 .hero-actions .btn{width:100%}
 .features-grid,.process-steps,.stats-grid,.services-grid,.pricing-grid,.greviews-grid,.form-grid{grid-template-columns:1fr}
@@ -2345,12 +2352,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="ot-avatar"><i class="fas fa-headset"></i></div>
     <div>
       <div class="ot-status"><span class="dot"></span> Şu an çevrimiçiyiz</div>
-      <div class="ot-title">Bodrum Hurdacım</div>
+      <div class="ot-title">Fiyat teklifi için arayın</div>
     </div>
   </div>
-  <p class="ot-text">Hurdanızın kilo fiyatını hemen öğrenin. Fiyat teklifi için arayın, telefonda net fiyat verelim.</p>
   <div class="ot-actions">
-    <a href="tel:+905301213551" class="ot-btn ot-btn-call"><i class="fas fa-phone-alt"></i> Hemen Ara</a>
+    <a href="tel:+905301213551" class="ot-btn ot-btn-call"><i class="fas fa-phone-alt"></i> 0530 121 35 51</a>
     <a href="https://wa.me/905301213551" target="_blank" rel="noopener" class="ot-btn ot-btn-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
 </div>
@@ -2490,8 +2496,11 @@ if (particlesContainer) {
     p.style.width = size + 'px';
     p.style.height = size + 'px';
     p.style.left = Math.random() * 100 + '%';
-    p.style.animationDuration = (Math.random() * 10 + 8) + 's';
-    p.style.animationDelay = (Math.random() * 10) + 's';
+    var dur = Math.random() * 10 + 8;
+    p.style.animationDuration = dur + 's';
+    // Negatif gecikme: nokta döngüsünün rastgele bir anından "devam ediyormuş"
+    // gibi başlar, böylece ilk karede hepsi ekrana dağılmış olarak görünür.
+    p.style.animationDelay = '-' + (Math.random() * dur).toFixed(2) + 's';
     p.style.opacity = Math.random() * 0.6 + 0.3;
     particlesContainer.appendChild(p);
   }
@@ -2575,6 +2584,7 @@ if (toast) {
     if (window.scrollY / scrollable >= 0.5) {
       shown = true;
       toast.classList.add('show');
+      document.body.classList.add('toast-open');
       window.removeEventListener('scroll', maybeShowToast);
     }
   }
@@ -2584,6 +2594,7 @@ if (toast) {
   if (otClose) {
     otClose.addEventListener('click', function(){
       toast.classList.remove('show');
+      document.body.classList.remove('toast-open');
       shown = true;
       try { sessionStorage.setItem('otDismissed', '1'); } catch (err) {}
     });
